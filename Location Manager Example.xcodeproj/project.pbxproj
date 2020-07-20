@@ -13,10 +13,11 @@
 		844B02FF24C578C900882543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B02FD24C578C900882543 /* Main.storyboard */; };
 		844B030124C578CD00882543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844B030024C578CD00882543 /* Assets.xcassets */; };
 		844B030424C578CD00882543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844B030224C578CD00882543 /* LaunchScreen.storyboard */; };
+		844B030C24C5790C00882543 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B030B24C5790C00882543 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		844B02F424C578C900882543 /* Location Manager Singleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Manager Singleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		844B02F424C578C900882543 /* Location Manager Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Manager Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844B02F724C578C900882543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844B02F924C578C900882543 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		844B02FB24C578C900882543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		844B030024C578CD00882543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844B030324C578CD00882543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844B030524C578CD00882543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844B030B24C5790C00882543 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,7 @@
 		844B02EB24C578C900882543 = {
 			isa = PBXGroup;
 			children = (
-				844B02F624C578C900882543 /* Location Manager Singleton */,
+				844B02F624C578C900882543 /* Location Manager Example */,
 				844B02F524C578C900882543 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +50,32 @@
 		844B02F524C578C900882543 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				844B02F424C578C900882543 /* Location Manager Singleton.app */,
+				844B02F424C578C900882543 /* Location Manager Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		844B02F624C578C900882543 /* Location Manager Singleton */ = {
+		844B02F624C578C900882543 /* Location Manager Example */ = {
 			isa = PBXGroup;
 			children = (
 				844B02F724C578C900882543 /* AppDelegate.swift */,
 				844B02F924C578C900882543 /* SceneDelegate.swift */,
 				844B02FB24C578C900882543 /* ViewController.swift */,
+				844B030B24C5790C00882543 /* LocationManager.swift */,
 				844B02FD24C578C900882543 /* Main.storyboard */,
 				844B030024C578CD00882543 /* Assets.xcassets */,
 				844B030224C578CD00882543 /* LaunchScreen.storyboard */,
 				844B030524C578CD00882543 /* Info.plist */,
 			);
-			path = "Location Manager Singleton";
+			path = "Location Manager Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		844B02F324C578C900882543 /* Location Manager Singleton */ = {
+		844B02F324C578C900882543 /* Location Manager Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 844B030824C578CD00882543 /* Build configuration list for PBXNativeTarget "Location Manager Singleton" */;
+			buildConfigurationList = 844B030824C578CD00882543 /* Build configuration list for PBXNativeTarget "Location Manager Example" */;
 			buildPhases = (
 				844B02F024C578C900882543 /* Sources */,
 				844B02F124C578C900882543 /* Frameworks */,
@@ -82,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "Location Manager Singleton";
+			name = "Location Manager Example";
 			productName = "Location Manager Singleton";
-			productReference = 844B02F424C578C900882543 /* Location Manager Singleton.app */;
+			productReference = 844B02F424C578C900882543 /* Location Manager Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 844B02EF24C578C900882543 /* Build configuration list for PBXProject "Location Manager Singleton" */;
+			buildConfigurationList = 844B02EF24C578C900882543 /* Build configuration list for PBXProject "Location Manager Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				844B02F324C578C900882543 /* Location Manager Singleton */,
+				844B02F324C578C900882543 /* Location Manager Example */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844B02FC24C578C900882543 /* ViewController.swift in Sources */,
+				844B030C24C5790C00882543 /* LocationManager.swift in Sources */,
 				844B02F824C578C900882543 /* AppDelegate.swift in Sources */,
 				844B02FA24C578C900882543 /* SceneDelegate.swift in Sources */,
 			);
@@ -284,14 +288,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Location Manager Singleton/Info.plist";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Location Manager Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Evgeny-Ezub.Location-Manager-Singleton";
+				PRODUCT_BUNDLE_IDENTIFIER = "Evgeny-Ezub.Location-Manager-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,14 +307,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Location Manager Singleton/Info.plist";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Location Manager Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Evgeny-Ezub.Location-Manager-Singleton";
+				PRODUCT_BUNDLE_IDENTIFIER = "Evgeny-Ezub.Location-Manager-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		844B02EF24C578C900882543 /* Build configuration list for PBXProject "Location Manager Singleton" */ = {
+		844B02EF24C578C900882543 /* Build configuration list for PBXProject "Location Manager Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844B030624C578CD00882543 /* Debug */,
@@ -326,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		844B030824C578CD00882543 /* Build configuration list for PBXNativeTarget "Location Manager Singleton" */ = {
+		844B030824C578CD00882543 /* Build configuration list for PBXNativeTarget "Location Manager Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844B030924C578CD00882543 /* Debug */,
