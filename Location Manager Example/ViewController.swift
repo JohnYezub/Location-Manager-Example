@@ -9,29 +9,65 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var locationManager = LocationManager()
+    
+    private var locationManager = LocationManager()
+    
+    private var locationLabel: UILabel!
+    
+    private var locationPlace: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        locationManager.completeLocation = { location, error in
+        
+        setupUI()
+        
+        locationManager.completeLocation = { [weak self] location, error in
             if location != nil {
-                print("VC")
+                print("ViewController gets location:")
                 print(location!)
-                self.locationName()
-            } else {
-                print("failed to get location")
-            }                        
+                self?.locationLabel.text = "\(location!.coordinate.latitude) \(location!.coordinate.longitude)"
+                self?.locationName()
+            }
+            if location == nil || error != nil {
+                self?.locationLabel.text = "Failed to get location"
+            }
         }
     }
     
-    func locationName() {
+    //MARK: UI
+    private func setupUI(){
+        locationLabel = UILabel()
+        locationLabel.text = ""
+        locationLabel.textColor = .darkGray
+        locationLabel.font = UIFont(name: "Helvetica", size: 18)
+        locationLabel.textAlignment = .center
+        view.addSubview(locationLabel)
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
+        locationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        locationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        
+        locationPlace = UILabel()
+        locationPlace.text = ""
+        locationPlace.textColor = .darkGray
+        locationPlace.font = UIFont(name: "Helvetica", size: 18)
+        locationPlace.textAlignment = .center
+        view.addSubview(locationPlace)
+        locationPlace.translatesAutoresizingMaskIntoConstraints = false
+        locationPlace.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        locationPlace.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        locationPlace.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 20).isActive = true
+        
+    }
+    
+    //MARK: retrieve placemark on completion
+    private func locationName() {
         locationManager.getPlace() { [weak self] text in
+            self?.locationPlace.text = text
             print(text)
         }
     }
-
-
+    
+    
 }
 

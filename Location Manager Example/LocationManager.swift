@@ -12,8 +12,10 @@ import CoreLocation
 class LocationManager: NSObject {
    
     var completeLocation: ((CLLocation?, Error?)->())?
-    fileprivate var locationManager = CLLocationManager()
-    fileprivate var userLocation: CLLocation?
+    private var locationManager = CLLocationManager()
+    ///we update user location once we get location
+    ///use it for placemark
+    private var userLocation: CLLocation?
     
     override init() {
         super.init()
@@ -27,12 +29,15 @@ extension LocationManager: CLLocationManagerDelegate {
     
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 
+        ///once we get auth status - we request location or send nil to completion
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            print("authorized, requesting location...")  // location authorized
-            locationManager.requestLocation()
+            print("authorized, requesting location...")
+            //locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
         default:
             print("no location access is allowed")
+            completeLocation?(nil, nil)
         }
     }
     
@@ -40,6 +45,8 @@ extension LocationManager: CLLocationManagerDelegate {
         guard let recentLocation = locations.last else {
             completeLocation?(nil, nil)
             return }
+        print(locations)
+        locationManager.stopUpdatingLocation()
         userLocation = recentLocation
         print("didUpdateLocations:")
         print(recentLocation as Any)
@@ -52,7 +59,7 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 }
 
-// MARK: Get Placemark (location Adress)
+// MARK: Get Placemark (location Address)
 extension LocationManager {
     
     func getPlace(completion: @escaping (String) -> Void) {
